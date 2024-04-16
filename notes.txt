@@ -1,0 +1,6 @@
+https://novu.co/blog/the-ultimate-guide-to-laravel-reverb/
+
+BROADCAST_CONNECTION=reverb
+php artisan reverb:start
+php artisan schedule:work
+php artisan schedule:list
