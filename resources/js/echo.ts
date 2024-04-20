@@ -1,7 +1,7 @@
 import Echo from 'laravel-echo';
 
 import Pusher from 'pusher-js';
-
+// types in global.d.ts
 window.Pusher = Pusher;
 
 window.Echo = new Echo({

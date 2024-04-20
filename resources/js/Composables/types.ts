@@ -24,4 +24,18 @@ type BreadcrumbsType = {
   to: string
 }
 
-export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType };
+type CoreStocksProps = {
+  labels: string[],
+  datasets: Array<{
+    high: string,
+    low: string
+  }>
+}
+
+type CoreStocksForm = {
+  symbol: string,
+  year: string,
+  month: string,
+}
+
+export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, CoreStocksProps, CoreStocksForm };

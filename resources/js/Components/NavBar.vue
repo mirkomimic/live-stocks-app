@@ -14,6 +14,12 @@
 
         <v-spacer></v-spacer>
 
+        <Link href="/" as="button">
+          Core Stocks
+        </Link>
+
+        <v-spacer></v-spacer>
+
         <Link v-if="!$page.props.auth.user" :href="route('login')" as="button">Log in</Link>
         <Link v-if="!$page.props.auth.user" :href="route('register')" as="button">Register</Link>
         <v-switch

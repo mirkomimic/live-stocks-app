@@ -1,5 +1,8 @@
 https://novu.co/blog/the-ultimate-guide-to-laravel-reverb/
 
+composer require laravel/reverb:@beta
+php artisan reverb:install
+
 BROADCAST_CONNECTION=reverb
 php artisan reverb:start
 php artisan schedule:work
