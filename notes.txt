@@ -7,3 +7,8 @@ BROADCAST_CONNECTION=reverb
 php artisan reverb:start
 php artisan schedule:work
 php artisan schedule:list
+
+https://cloud.google.com/php/grpc#c-implementation
+sudo pecl install grpc
+composer require "grpc/grpc:^1.38"
+sudo pecl install protobuf

@@ -46,7 +46,7 @@ const options = {
   plugins: {
     title: {
       display: true,
-      text: 'Core Stock'
+      text: ''
     },
   },
 }

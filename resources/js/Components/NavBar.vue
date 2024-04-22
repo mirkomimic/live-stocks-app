@@ -3,8 +3,8 @@
     color="transparent"
     density="compact"
   >
-    <v-container>
-      <div class="ml-auto d-flex align-center ga-4">
+    <v-container class="py-0 h-100">
+      <div class="ml-auto d-flex align-center ga-4 h-100">
 
         <div class="d-none d-md-block">
           <Link href="/" as="button">
@@ -14,8 +14,21 @@
 
         <v-spacer></v-spacer>
 
-        <Link href="/" as="button">
-          Core Stocks
+        <Link
+          href="/"
+          as="button"
+          class="h-100 -mb-1"
+          :class="{'text-cyan-lighten-1': route().current('home')}"
+        >
+          Stocks
+        </Link>
+        <Link
+          :href="route('crypto.index')"
+          as="button"
+          class="h-100 -mb-1"
+          :class="{'text-cyan-lighten-1': route().current('crypto.index')}"
+        >
+          Crypto
         </Link>
 
         <v-spacer></v-spacer>

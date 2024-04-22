@@ -2,10 +2,10 @@
 
 namespace App\Services\AlphaVantageApi;
 
-use GuzzleHttp\Exception\RequestException;
+use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
 
-class CoreStock extends AlphaVantage
+class Cryptocurrencies extends AlphaVantage
 {
   private array $response = [];
 
@@ -24,20 +24,20 @@ class CoreStock extends AlphaVantage
 
     // try {
     //   $data = Http::get($this->endpoint, [
-    //     'function' => 'TIME_SERIES_DAILY',
-    //     'symbol' => $request->symbol ?? 'IBM',
-    //     'outputsize' => 'compact',
+    //     'function' => 'DIGITAL_CURRENCY_DAILY',
+    //     'symbol' => $request->symbol ?? 'BTC',
+    //     'market' => 'CNY',
     //     'apikey' => $this->apiKey,
     //   ])->json();
     // } catch (RequestException $ex) {
     //   echo 'Caught exception: ',  $ex->getMessage(), "\n";
     // }
 
-    $data = json_decode(json: file_get_contents(base_path('stocks.json')), associative: true);
+    $data = json_decode(json: file_get_contents(base_path('crypto.json')), associative: true);
 
-    if (!isset($data['Time Series (Daily)'])) return [];
+    if (!isset($data['Time Series (Digital Currency Daily)'])) return [];
 
-    foreach ($data['Time Series (Daily)'] as $key => $object) {
+    foreach ($data['Time Series (Digital Currency Daily)'] as $key => $object) {
 
       $monthNum = getdate(strtotime($key))['mon'];
       $yearNum = getdate(strtotime($key))['year'];
@@ -49,8 +49,8 @@ class CoreStock extends AlphaVantage
         if ($monthData == $monthNum) {
           $this->response['labels'][] = $key;
           $this->response['datasets'][] = [
-            'high' => $object['2. high'],
-            'low' => $object['3. low']
+            'high' => $object['2b. high (USD)'],
+            'low' => $object['3b. low (USD)']
           ];
         }
       }

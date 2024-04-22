@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import CoreStockChart from '@/Components/Charts/CoreStockChart.vue';
+import LineChart from '@/Components/Charts/LineChart.vue';
 import Breadcrumbs from '@/Components/Other/Breadcrumbs.vue';
-import { BreadcrumbsType, CoreStocksProps, CoreStocksForm } from '@/Composables/types';
+import { BreadcrumbsType, LineChartProps, AlphaVantageFiltersForm } from '@/Composables/types';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import { monthsObject, monthNames } from '@/Composables/data';
 
 const props = defineProps < {
-  coreStocks: CoreStocksProps;
-  filters: CoreStocksForm
+  coreStocks: LineChartProps;
+  filters: AlphaVantageFiltersForm
 }>();
 
 const breadcrumbs: BreadcrumbsType[] = [
@@ -25,7 +25,7 @@ const monthValue = (monthTitle: string) => {
   if (month) return month.title;
 }
 
-const form = useForm<CoreStocksForm>({
+const form = useForm<AlphaVantageFiltersForm>({
   symbol: props.filters?.symbol ?? 'IBM',
   year: props.filters?.year ?? new Date().getFullYear().toString(),
   month: props.filters?.month ?? monthValue(monthNames[new Date().getMonth()]),
@@ -80,7 +80,7 @@ const submit = () => {
         </div>
 
         <div v-if="props.coreStocks.labels" style="height: 500px;">
-          <CoreStockChart :labels="props.coreStocks.labels" :datasets="props.coreStocks.datasets"/>
+          <LineChart :labels="props.coreStocks.labels" :datasets="props.coreStocks.datasets"/>
         </div>
         <div v-else>No Data!</div>
 

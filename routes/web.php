@@ -1,12 +1,14 @@
 <?php
 
+use App\Http\Controllers\CryptoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\TradesController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::resource('crypto', CryptoController::class)->only(['index']);
 
 
 Route::get('/dashboard', function () {

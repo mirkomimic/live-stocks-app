@@ -24,7 +24,7 @@ type BreadcrumbsType = {
   to: string
 }
 
-type CoreStocksProps = {
+type LineChartProps = {
   labels: string[],
   datasets: Array<{
     high: string,
@@ -32,10 +32,10 @@ type CoreStocksProps = {
   }>
 }
 
-type CoreStocksForm = {
+type AlphaVantageFiltersForm = {
   symbol: string,
   year: string,
   month: string,
 }
 
-export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, CoreStocksProps, CoreStocksForm };
+export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, LineChartProps, AlphaVantageFiltersForm };
