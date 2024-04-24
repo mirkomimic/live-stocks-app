@@ -60,5 +60,14 @@ const navItems = [
       },
     ]
   },
+  {
+    name: 'Data',
+    items: [
+      {
+        name: 'Earnings',
+        href: 'data.earnings'
+      }
+    ]
+  }
 ]
 </script>

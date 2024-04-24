@@ -2,10 +2,11 @@
 
 namespace App\Services\AlphaVantageApi;
 
+use App\Services\AlphaVantageApi\Interfaces\TimeSeries;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\Http;
 
-class CoreStock extends AlphaVantage
+class CoreStock extends AlphaVantage implements TimeSeries
 {
   private array $response = [];
 

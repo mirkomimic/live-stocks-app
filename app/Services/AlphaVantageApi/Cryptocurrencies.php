@@ -2,11 +2,12 @@
 
 namespace App\Services\AlphaVantageApi;
 
+use App\Services\AlphaVantageApi\Interfaces\TimeSeries;
 use DateTime;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
 
-class Cryptocurrencies extends AlphaVantage
+class Cryptocurrencies extends AlphaVantage implements TimeSeries
 {
   private array $response = [];
 

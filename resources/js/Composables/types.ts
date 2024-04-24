@@ -32,10 +32,17 @@ type LineChartProps = {
   }>
 }
 
+type BarChartProps = {
+  labels: string[],
+  datasets: Array<{
+    reportedEPS: string,
+  }>
+}
+
 type AlphaVantageFiltersForm = {
   symbol: string,
   year: string,
   month: string,
 }
 
-export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, LineChartProps, AlphaVantageFiltersForm };
+export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, LineChartProps, AlphaVantageFiltersForm, BarChartProps };

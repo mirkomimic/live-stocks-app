@@ -12,8 +12,4 @@ abstract class AlphaVantage
     $this->apiKey = env('ALPHAVANTAGE_KEY');
     $this->endpoint = 'https://www.alphavantage.co/query';
   }
-
-  public abstract function getDaily($request): array;
-
-  public abstract function getIntraday($request): array;
 }
