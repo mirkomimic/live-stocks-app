@@ -22,4 +22,14 @@ class CryptoController extends Controller
       'filters' => $request->toArray()
     ]);
   }
+
+  public function intraday(Request $request)
+  {
+    $crypto = $this->cryptoService->getIntraday($request);
+
+    return Inertia::render('Crypto/Intraday', [
+      'crypto' => $crypto,
+      'filters' => $request->toArray()
+    ]);
+  }
 }

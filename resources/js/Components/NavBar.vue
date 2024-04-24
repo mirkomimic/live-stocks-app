@@ -14,7 +14,7 @@
 
         <v-spacer></v-spacer>
 
-        <Link
+        <!-- <Link
           href="/"
           as="button"
           class="h-100 -mb-1"
@@ -29,7 +29,9 @@
           :class="{'text-cyan-lighten-1': route().current('crypto.index')}"
         >
           Crypto
-        </Link>
+        </Link> -->
+
+        <TopNavigation/>
 
         <v-spacer></v-spacer>
 
@@ -55,6 +57,7 @@ import { Link } from '@inertiajs/vue3';
 import { toggleTheme } from '@/Composables/helpers'
 import { useTheme } from 'vuetify'
 import NavBarUserMenu from './Menus/NavBarUserMenu.vue';
+import TopNavigation from './Other/TopNavigation.vue';
 
 const theme = useTheme()
 

@@ -33,7 +33,7 @@ class CoreStock extends AlphaVantage
     //   echo 'Caught exception: ',  $ex->getMessage(), "\n";
     // }
 
-    $data = json_decode(json: file_get_contents(base_path('stocks.json')), associative: true);
+    $data = json_decode(json: file_get_contents(base_path('jsonData/stocks.json')), associative: true);
 
     if (!isset($data['Time Series (Daily)'])) return [];
 

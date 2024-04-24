@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::resource('crypto', CryptoController::class)->only(['index']);
+Route::get('crypto', [CryptoController::class, 'index'])->name('crypto.index');
+Route::get('crypto/intraday', [CryptoController::class, 'intraday'])->name('crypto.intraday');
 
 
 Route::get('/dashboard', function () {
