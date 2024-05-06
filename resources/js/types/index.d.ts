@@ -12,5 +12,9 @@ export type PageProps<T extends Record<string, unknown> = Record<string, unknown
   flash: {
     msg: string,
     isOpen: boolean
+  };
+  alpaca: {
+    key: string,
+    secret: string
   }
 };

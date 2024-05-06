@@ -45,4 +45,16 @@ type AlphaVantageFiltersForm = {
   month: string,
 }
 
-export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, LineChartProps, AlphaVantageFiltersForm, BarChartProps };
+type UserNotification = {
+  id: string,
+  message: string,
+  type: string
+}
+
+type intradayProps = {
+  x: Date,
+  y: string[]
+}
+
+
+export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, LineChartProps, AlphaVantageFiltersForm, BarChartProps, UserNotification, intradayProps };

@@ -37,6 +37,10 @@ class HandleInertiaRequests extends Middleware
       'flash' => [
         'msg' => fn () => $request->session()->get('msg'),
         'isOpen' => false
+      ],
+      'alpaca' => [
+        'key' => env('ALPACA_KEY'),
+        'secret' => env('ALPACA_SECRET')
       ]
     ];
   }

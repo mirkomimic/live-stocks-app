@@ -62,6 +62,30 @@ class CoreStock extends AlphaVantage implements TimeSeries
 
   public function getIntraday($request): array
   {
+
+    try {
+      $data = Http::get($this->endpoint, [
+        'function' => 'TIME_SERIES_INTRADAY',
+        'symbol' => $request->symbol ?? 'IBM',
+        'interval' => '5min',
+        'outputsize' => 'compact',
+        'apikey' => $this->apiKey,
+      ])->json();
+    } catch (RequestException $ex) {
+      echo 'Caught exception: ',  $ex->getMessage(), "\n";
+    }
+
+    $data = json_decode(json: file_get_contents(base_path('jsonData/stocksIntraday.json')), associative: true);
+
+    if (!isset($data['Time Series (5min)'])) return [];
+
+    foreach ($data['Time Series (5min)'] as $key => $object) {
+      $this->response[] = [
+        'x' => $key,
+        'y' => [$object['1. open'], $object['2. high'], $object['3. low'], $object['4. close']]
+      ];
+    }
+
     return $this->response;
   }
 }

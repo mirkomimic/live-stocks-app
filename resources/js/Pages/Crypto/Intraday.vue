@@ -29,7 +29,7 @@ import LineChart from '@/Components/Charts/LineChart.vue';
 import Breadcrumbs from '@/Components/Other/Breadcrumbs.vue';
 import { AlphaVantageFiltersForm, BreadcrumbsType, LineChartProps } from '@/Composables/types';
 import MainLayout from '@/Layouts/MainLayout.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import { Head, useForm, usePage } from '@inertiajs/vue3';
 import { Ref } from 'vue';
 import { ref } from 'vue';
 

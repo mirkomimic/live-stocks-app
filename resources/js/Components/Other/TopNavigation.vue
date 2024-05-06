@@ -68,6 +68,15 @@ const navItems = [
         href: 'data.earnings'
       }
     ]
+  },
+  {
+    name: 'Alpaca',
+    items: [
+      {
+        name: 'Intraday',
+        href: 'alpaca.index'
+      },
+    ]
   }
 ]
 </script>

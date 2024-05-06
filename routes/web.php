@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlpacaController;
 use App\Http\Controllers\CryptoController;
 use App\Http\Controllers\FundamentalDataController;
 use App\Http\Controllers\HomeController;
@@ -14,6 +15,9 @@ Route::get('crypto/intraday', [CryptoController::class, 'intraday'])->name('cryp
 
 Route::get('data', [FundamentalDataController::class, 'earnings'])->name('data.earnings');
 
+Route::post('testNotification', [FundamentalDataController::class, 'testNotification'])->name('testNotification');
+
+Route::get('alpaca', [AlpacaController::class, 'index'])->name('alpaca.index');
 
 Route::get('/dashboard', function () {
   return Inertia::render('Dashboard');
