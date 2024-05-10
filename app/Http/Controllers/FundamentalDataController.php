@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use AlphaIntelligence;
 use App\Models\User;
 use App\Notifications\UserNotification;
 use App\Services\AlphaVantageApi\FundamentalData\FundamentalData;

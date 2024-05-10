@@ -56,5 +56,19 @@ type intradayProps = {
   y: string[]
 }
 
+type GainersAndLosers = {
+  ticker: string,
+  price: string,
+  change_amount: string,
+  change_percentage: string,
+  volume: string
+}
 
-export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, LineChartProps, AlphaVantageFiltersForm, BarChartProps, UserNotification, intradayProps };
+type TopGainersAndLosers = {
+  most_actively_traded: GainersAndLosers[],
+  top_gainers: GainersAndLosers[],
+  top_losers: GainersAndLosers[]
+}
+
+
+export type { LoginForm, RegisterForm, ResetPasswordForm, BreadcrumbsType, LineChartProps, AlphaVantageFiltersForm, BarChartProps, UserNotification, intradayProps, TopGainersAndLosers };

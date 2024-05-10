@@ -30,7 +30,6 @@ import Breadcrumbs from '@/Components/Other/Breadcrumbs.vue';
 import { BreadcrumbsType, intradayProps } from '@/Composables/types';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import { Head, useForm, usePage } from '@inertiajs/vue3';
-import { withCtx } from 'vue';
 import { ref, Ref } from 'vue';
 
 const breadcrumbs: BreadcrumbsType[] = [

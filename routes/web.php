@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlpacaController;
+use App\Http\Controllers\AlphaIntelligenceController;
 use App\Http\Controllers\CryptoController;
 use App\Http\Controllers\FundamentalDataController;
 use App\Http\Controllers\HomeController;
@@ -19,9 +20,11 @@ Route::post('testNotification', [FundamentalDataController::class, 'testNotifica
 
 Route::get('alpaca', [AlpacaController::class, 'index'])->name('alpaca.index');
 
+Route::get('alpha-intelligence/topGainersAndLosers', [AlphaIntelligenceController::class, 'topGainersAndLosers'])->name('alpha-intelligence.topGainersAndLosers');
+
 Route::get('/dashboard', function () {
   return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

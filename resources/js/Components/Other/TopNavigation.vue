@@ -77,6 +77,15 @@ const navItems = [
         href: 'alpaca.index'
       },
     ]
+  },
+  {
+    name: 'Alpha Intelligence',
+    items: [
+      {
+        name: 'Top Gainers and Losers',
+        href: 'alpha-intelligence.topGainersAndLosers'
+      },
+    ]
   }
 ]
 </script>

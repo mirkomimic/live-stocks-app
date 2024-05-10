@@ -10,6 +10,8 @@
     </v-app-bar>
 
     <v-main>
+      <Notification v-model="notificationProp.isOpen" :message="notificationProp.message"/>
+
       <Transition name="fade" appear>
         <div>
           <slot/>
@@ -30,10 +32,26 @@
 
 <script setup lang="ts">
 import NavBar from '@/Components/NavBar.vue';
-import { ref } from 'vue';
 import { useDisplay } from 'vuetify';
+import Notification from '@/Components/Other/Notification.vue';
+import { Ref, ref } from 'vue';
+import { UserNotification } from '@/Composables/types';
+import { usePage } from '@inertiajs/vue3';
+
+const notificationProp: Ref<{
+  isOpen: boolean,
+  message: string
+}> = ref({
+  isOpen: false,
+  message: ''
+})
 
 const display = ref(useDisplay()) 
+
+window.Echo.private('App.Models.User.' + usePage().props.auth.user?.id).notification((notification: UserNotification) => {
+  notificationProp.value.isOpen = true
+  notificationProp.value.message = notification.message
+});
 
 </script>
 
